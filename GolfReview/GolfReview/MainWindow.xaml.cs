@@ -43,7 +43,7 @@ namespace GolfReview
 
             BitmapImage holeImage = new BitmapImage();
             holeImage.BeginInit();
-            holeImage.UriSource = new Uri("Images/AugustaNationalGolfCourse/Hole1.jpg", UriKind.Relative);
+            holeImage.UriSource = new Uri("/GolfReview;component/Images/AugustaNationalGolfCourse/Hole1.jpg", UriKind.Relative);
             holeImage.EndInit();
             imageHoleMap.Source = holeImage;
 
