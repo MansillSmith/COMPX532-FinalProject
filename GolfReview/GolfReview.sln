@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GolfReview", "GolfReview\GolfReview.csproj", "{D0D83F6A-87F9-463F-92C1-B736B4C33A50}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B132EAAB-986F-4FA2-AE8F-C8D4A9C530EC}"
+	ProjectSection(SolutionItems) = preProject
+		Scores.json = Scores.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

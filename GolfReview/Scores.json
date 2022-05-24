@@ -1,0 +1,135 @@
+{
+	"Players": [
+		{
+			"Name": "Scottie Scheffler",
+			"Nationality": "United States",
+			"Holes": [
+				{
+					"Hole Number": 1,
+					"Shots":[
+						{
+							"Club": "Driver",
+							"Distance": 289,
+							"EndPosition": {
+								"X": 10,
+								"Y": 289
+							}
+						},
+						{
+							"Club": "5 Iron",
+							"Distance": 189,
+							"EndPosition": {
+								"X": 30,
+								"Y": 460
+							}
+						},
+						{
+							"Club": "52 Degree",
+							"Distance": 26,
+							"EndPosition":{
+								"X": 30,
+								"Y": 444
+							}
+						},
+						{
+							"Club": "Putter",
+							"Distance" : 1,
+							"EndPosition": {
+								"X": 30,
+								"Y": 445
+							}
+						}
+					]
+				},
+				{
+					"Hole Number": 2,
+					"Shots": [
+						{
+							"Club": "Driver",
+							"Distance": 338,
+							"EndPosition": {
+								"X": 30,
+								"Y": 338
+							}
+						},
+						{
+							"Club": "6 Iron",
+							"Distance": 197,
+							"EndPosition": {
+								"X": 30,
+								"Y": 338
+							}
+						},
+						{
+							"Club": "56 Degree",
+							"Distance": 44,
+							"EndPosition": {
+								"X": 30,
+								"Y": 338
+							}
+						},
+						{
+							"Club": "Putter",
+							"Distance": 4
+							"EndPosition": {
+								"X": 30,
+								"Y": 338
+							}
+						,
+						{
+							"Club": "Putter",
+							"Distance": 1
+							"EndPosition": {
+								"X": 30,
+								"Y": 338
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"Name": "Rory McIlroy",
+			"Nationality": "Northern Ireland",
+			"Holes": [
+				{
+					"Hole Number": 1,
+					"Shots":[
+						{
+							"Club": "Driver",
+							"Distance": 306,
+							"EndPosition": {
+								"X": 10,
+								"Y": 289
+							}
+						},
+						{
+							"Club": "5 Iron",
+							"Distance": 189,
+							"EndPosition": {
+								"X": 30,
+								"Y": 460
+							}
+						},
+						{
+							"Club": "52 Degree",
+							"Distance": 26,
+							"EndPosition":{
+								"X": 30,
+								"Y": 444
+							}
+						},
+						{
+							"Club": "Putter",
+							"Distance" : 1,
+							"EndPosition": {
+								"X": 30,
+								"Y": 445
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
