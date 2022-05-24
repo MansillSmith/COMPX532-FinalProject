@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -26,6 +27,8 @@ namespace GolfReview
         const string DATA_FOLDER = "GolfReview.Data";
         string SCORES_DATA_PATH = DATA_FOLDER + ".Scores.json";
         string AUGUSTA_CARD = DATA_FOLDER + ".AugustaNationalCard.json";
+        string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
+
         List<Player> playersList;
 
         Assembly assembly = Assembly.GetExecutingAssembly();
@@ -34,10 +37,21 @@ namespace GolfReview
         {
             InitializeComponent();
 
-            CreateScoreGrid();
+            LoadPlayers();
+            playersList.Insert(0, GetParPlayer());
+            dataGridScores.ItemsSource = playersList;
+
+            BitmapImage holeImage = new BitmapImage();
+            holeImage.BeginInit();
+            holeImage.UriSource = new Uri("Images/AugustaNationalGolfCourse/Hole1.jpg", UriKind.Relative);
+            holeImage.EndInit();
+            imageHoleMap.Source = holeImage;
+
+            //Bitmap image = new Bitmap(assembly.GetManifestResourceStream(AUGUSTA_HOLE_FOLER));
+            //imageHoleMap.Source = (ImageSource)image;
         }
 
-        public void CreateScoreGrid()
+        public void LoadPlayers()
         {
             //Read the Data JSON File
             JObject scoresJSON = null;
@@ -47,10 +61,6 @@ namespace GolfReview
             }
 
             playersList = ConvertJSONToPlayers(scoresJSON);
-            playersList.Insert(0, GetParPlayer());
-            dataGridScores.ItemsSource = playersList;
-
-            Console.WriteLine(scoresJSON.ToString());
         }
 
         private Player GetParPlayer()
