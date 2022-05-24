@@ -10,6 +10,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -30,5 +31,7 @@
         </Menu>
         
         <!-- Row 2-->
+        <Grid Grid.Row="2" Grid.Column="2" Name="gridScores"/>
+
     </Grid>
 </Window>
