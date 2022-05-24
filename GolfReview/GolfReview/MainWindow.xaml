@@ -30,8 +30,10 @@
             </MenuItem>
         </Menu>
         
-        <!-- Row 2-->
-        <DataGrid Grid.Row="2" Grid.Column="2" Name="dataGridScores" AutoGenerateColumns="False">
+        <!-- Row 2 -->
+        
+        <!-- Row 3 -->
+        <DataGrid Grid.Row="3" Grid.Column="2" Name="dataGridScores" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}"/>
