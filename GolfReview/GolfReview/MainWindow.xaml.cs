@@ -23,7 +23,12 @@ namespace GolfReview
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string SCORES_DATA_PATH = "GolfReview.Data.Scores.json";
+        const string DATA_FOLDER = "GolfReview.Data";
+        string SCORES_DATA_PATH = DATA_FOLDER + ".Scores.json";
+        string AUGUSTA_CARD = DATA_FOLDER + ".AugustaNationalCard.json";
+        List<Player> playersList;
+
+        Assembly assembly = Assembly.GetExecutingAssembly();
 
         public MainWindow()
         {
@@ -35,15 +40,41 @@ namespace GolfReview
         public void CreateScoreGrid()
         {
             //Read the Data JSON File
-            Assembly assembly = Assembly.GetExecutingAssembly();
             JObject scoresJSON = null;
             using(StreamReader reader = new StreamReader(assembly.GetManifestResourceStream(SCORES_DATA_PATH)))
             {
                 scoresJSON = JObject.Parse(reader.ReadToEnd());
             }
 
+            playersList = ConvertJSONToPlayers(scoresJSON);
+            playersList.Insert(0, GetParPlayer());
+            dataGridScores.ItemsSource = playersList;
 
             Console.WriteLine(scoresJSON.ToString());
+        }
+
+        private Player GetParPlayer()
+        {
+            JObject parCardJSON = null;
+            using (StreamReader reader = new StreamReader(assembly.GetManifestResourceStream(AUGUSTA_CARD)))
+            {
+                parCardJSON = JObject.Parse(reader.ReadToEnd());
+            }
+
+            return new Player(parCardJSON);
+        }
+
+        private List<Player> ConvertJSONToPlayers(JObject jobject)
+        {
+            List<Player> playersList = new List<Player>();
+            JArray jArray = (JArray)jobject["Players"];
+            foreach (var i in jArray)
+            {
+
+                playersList.Add(new Player((JObject)i));
+            }
+
+            return playersList;
         }
 
     }

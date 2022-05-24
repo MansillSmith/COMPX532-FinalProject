@@ -1,0 +1,28 @@
+﻿{
+	"Holes": [
+		{
+			"HoleNumber": 1,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 2,
+			"Score": 5
+		},
+		{
+			"HoleNumber": 3,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 4,
+			"Score": 3
+		},
+		{
+			"HoleNumber": 5,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 6,
+			"Score": 3
+		},
+	]
+}

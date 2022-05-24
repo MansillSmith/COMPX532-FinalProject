@@ -31,7 +31,18 @@
         </Menu>
         
         <!-- Row 2-->
-        <Grid Grid.Row="2" Grid.Column="2" Name="gridScores"/>
+        <DataGrid Grid.Row="2" Grid.Column="2" Name="dataGridScores" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
+                <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}"/>
+                <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}"/>
+                <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}"/>
+                <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}"/>
+                <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}"/>
+                <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}"/>
+                <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

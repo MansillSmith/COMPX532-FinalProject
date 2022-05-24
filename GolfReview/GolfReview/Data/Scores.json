@@ -5,7 +5,7 @@
 			"Nationality": "United States",
 			"Holes": [
 				{
-					"Hole Number": 1,
+					"HoleNumber": 1,
 					"Score": 4,
 					"Shots":[
 						{
@@ -43,7 +43,7 @@
 					]
 				},
 				{
-					"Hole Number": 2,
+					"HoleNumber": 2,
 					"Score": 5,
 					"Shots": [
 						{
@@ -89,19 +89,19 @@
 					]
 				},
 				{
-					"Hole Number": 3,
+					"HoleNumber": 3,
 					"Score": 3
 				},
 				{
-					"Hole Number": 4,
+					"HoleNumber": 4,
 					"Score": 3
 				},
 				{
-					"Hole Number": 5,
+					"HoleNumber": 5,
 					"Score": 4
 				},
 				{
-					"Hole Number": 6,
+					"HoleNumber": 6,
 					"Score": 3
 				}
 			]
@@ -111,7 +111,7 @@
 			"Nationality": "Northern Ireland",
 			"Holes": [
 				{
-					"Hole Number": 1,
+					"HoleNumber": 1,
 					"Score": 3,
 					"Shots":[
 						{
@@ -149,23 +149,23 @@
 					]
 				},
 				{
-					"Hole Number": 2,
+					"HoleNumber": 2,
 					"Score": 5
 				},
 				{
-					"Hole Number": 3,
+					"HoleNumber": 3,
 					"Score": 3
 				},
 				{
-					"Hole Number": 4,
+					"HoleNumber": 4,
 					"Score": 3
 				},
 				{
-					"Hole Number": 5,
+					"HoleNumber": 5,
 					"Score": 4
 				},
 				{
-					"Hole Number": 6,
+					"HoleNumber": 6,
 					"Score": 3
 				}
 			]
