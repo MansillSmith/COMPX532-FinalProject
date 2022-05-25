@@ -29,6 +29,8 @@ namespace GolfReview
         string AUGUSTA_CARD = DATA_FOLDER + ".AugustaNationalCard.json";
         string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
 
+        int currentHoleToDisplay = 0;
+
         List<Player> playersList;
 
         Assembly assembly = Assembly.GetExecutingAssembly();
@@ -58,18 +60,21 @@ namespace GolfReview
 
         public void DrawPlayersShots()
         {
-            for (int i = 0; i < playersList[1].Holes[0].Shots.Count; i++)
+            for(int j = 1; j < playersList.Count(); j++)
             {
-                Line tempLine = new Line();
-                tempLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
-                tempLine.X1 = playersList[1].Holes[0].Shots[i].X1;
-                tempLine.X2 = playersList[1].Holes[0].Shots[i].X2;
-                tempLine.Y1 = playersList[1].Holes[0].Shots[i].Y1;
-                tempLine.Y2 = playersList[1].Holes[0].Shots[i].Y2;
-                tempLine.HorizontalAlignment = HorizontalAlignment.Left;
-                tempLine.VerticalAlignment = VerticalAlignment.Center;
-                tempLine.StrokeThickness = 2;
-                canvasHoleMap.Children.Add(tempLine);
+                for (int i = 0; i < playersList[j].Holes[currentHoleToDisplay].Shots.Count; i++)
+                {
+                    Line tempLine = new Line();
+                    tempLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
+                    tempLine.X1 = playersList[j].Holes[currentHoleToDisplay].Shots[i].X1;
+                    tempLine.X2 = playersList[j].Holes[currentHoleToDisplay].Shots[i].X2;
+                    tempLine.Y1 = playersList[j].Holes[currentHoleToDisplay].Shots[i].Y1;
+                    tempLine.Y2 = playersList[j].Holes[currentHoleToDisplay].Shots[i].Y2;
+                    tempLine.HorizontalAlignment = HorizontalAlignment.Left;
+                    tempLine.VerticalAlignment = VerticalAlignment.Center;
+                    tempLine.StrokeThickness = 2;
+                    canvasHoleMap.Children.Add(tempLine);
+                }
             }
         }
 
