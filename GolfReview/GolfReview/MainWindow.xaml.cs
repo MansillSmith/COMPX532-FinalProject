@@ -30,6 +30,7 @@ namespace GolfReview
         string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
 
         int currentHoleToDisplay = 0;
+        new List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { System.Windows.Media.Brushes.LightSteelBlue, System.Windows.Media.Brushes.Black };
 
         List<Player> playersList;
 
@@ -65,7 +66,7 @@ namespace GolfReview
                 for (int i = 0; i < playersList[j].Holes[currentHoleToDisplay].Shots.Count; i++)
                 {
                     Line tempLine = new Line();
-                    tempLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
+                    tempLine.Stroke = listBrushes[j-1];
                     tempLine.X1 = playersList[j].Holes[currentHoleToDisplay].Shots[i].X1;
                     tempLine.X2 = playersList[j].Holes[currentHoleToDisplay].Shots[i].X2;
                     tempLine.Y1 = playersList[j].Holes[currentHoleToDisplay].Shots[i].Y1;
