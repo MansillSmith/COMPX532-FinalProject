@@ -44,25 +44,33 @@ namespace GolfReview
             DrawHoleOnScreen();
             DrawPlayersShots();
 
-            Line myLine = new Line();
-            myLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
-            myLine.X1 = 1;
-            myLine.X2 = 50;
-            myLine.Y1 = 1;
-            myLine.Y2 = 50;
-            myLine.HorizontalAlignment = HorizontalAlignment.Left;
-            myLine.VerticalAlignment = VerticalAlignment.Center;
-            myLine.StrokeThickness = 2;
-            canvasHoleMap.Children.Add(myLine);
-            //imageHoleMap.Children.Add(myLine);
-
-            //Bitmap image = new Bitmap(assembly.GetManifestResourceStream(AUGUSTA_HOLE_FOLER));
-            //imageHoleMap.Source = (ImageSource)image;
+            //    Line myLine = new Line();
+            //    myLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
+            //    myLine.X1 = 0;
+            //    myLine.X2 = 50;
+            //    myLine.Y1 = 0;
+            //    myLine.Y2 = 50;
+            //    myLine.HorizontalAlignment = HorizontalAlignment.Left;
+            //    myLine.VerticalAlignment = VerticalAlignment.Center;
+            //    myLine.StrokeThickness = 2;
+            //    canvasHoleMap.Children.Add(myLine);
         }
 
         public void DrawPlayersShots()
         {
-
+            for (int i = 0; i < playersList[1].Holes[0].Shots.Count; i++)
+            {
+                Line tempLine = new Line();
+                tempLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
+                tempLine.X1 = playersList[1].Holes[0].Shots[i].X1;
+                tempLine.X2 = playersList[1].Holes[0].Shots[i].X2;
+                tempLine.Y1 = playersList[1].Holes[0].Shots[i].Y1;
+                tempLine.Y2 = playersList[1].Holes[0].Shots[i].Y2;
+                tempLine.HorizontalAlignment = HorizontalAlignment.Left;
+                tempLine.VerticalAlignment = VerticalAlignment.Center;
+                tempLine.StrokeThickness = 2;
+                canvasHoleMap.Children.Add(tempLine);
+            }
         }
 
         public void DrawHoleOnScreen()
@@ -108,5 +116,9 @@ namespace GolfReview
             return playersList;
         }
 
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine(Mouse.GetPosition(canvasHoleMap));
+        }
     }
 }

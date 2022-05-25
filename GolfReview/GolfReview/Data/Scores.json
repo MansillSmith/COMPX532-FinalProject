@@ -11,34 +11,34 @@
 						{
 							"Club": "Driver",
 							"Distance": 289,
-							"EndPosition": {
-								"X": 10,
-								"Y": 289
-							}
+							"X1": 213,
+							"Y1": 864,
+							"X2": 34,
+							"Y2": 380
 						},
 						{
 							"Club": "5 Iron",
 							"Distance": 189,
-							"EndPosition": {
-								"X": 30,
-								"Y": 460
-							}
+							"X1": 34,
+							"Y1": 380,
+							"X2": 165,
+							"Y2": 45
 						},
 						{
 							"Club": "52 Degree",
 							"Distance": 26,
-							"EndPosition":{
-								"X": 30,
-								"Y": 444
-							}
+							"X1": 165,
+							"Y1": 45,
+							"X2": 164,
+							"Y2": 93
 						},
 						{
 							"Club": "Putter",
 							"Distance" : 1,
-							"EndPosition": {
-								"X": 30,
-								"Y": 445
-							}
+							"X1": 164,
+							"Y1": 93,
+							"X2": 164,
+							"Y2": 92
 						}
 					]
 				},
@@ -49,42 +49,42 @@
 						{
 							"Club": "Driver",
 							"Distance": 338,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "6 Iron",
 							"Distance": 197,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "56 Degree",
 							"Distance": 44,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "Putter",
 							"Distance": 4,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "Putter",
 							"Distance": 1,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						}
 					]
 				},
@@ -117,34 +117,34 @@
 						{
 							"Club": "Driver",
 							"Distance": 289,
-							"EndPosition": {
-								"X": 10,
-								"Y": 289
-							}
+							"X1": 10,
+							"Y1": 289,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "5 Iron",
 							"Distance": 189,
-							"EndPosition": {
-								"X": 30,
-								"Y": 460
-							}
+							"X1": 30,
+							"Y1": 460,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "52 Degree",
 							"Distance": 26,
-							"EndPosition":{
-								"X": 30,
-								"Y": 444
-							}
+							"X1": 30,
+							"Y1": 444,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "Putter",
 							"Distance" : 1,
-							"EndPosition": {
-								"X": 30,
-								"Y": 445
-							}
+							"X1": 30,
+							"Y1": 445,
+							"X2": 20,
+							"Y2": 299
 						}
 					]
 				},

@@ -29,10 +29,28 @@ namespace GolfReview
             set { _score = value; }
         }
 
+        private List<Shot> _shots;
+
+        public List<Shot> Shots
+        {
+            get { return _shots; }
+        }
+
+
         public Hole (JObject jObject)
         {
             HoleNumber = (int)jObject[nameof(HoleNumber)];
             Score = (int)jObject[nameof(Score)];
+            _shots = new List<Shot>();
+
+            if (jObject.ContainsKey(nameof(Shots)))
+            {
+                foreach (var i in jObject[nameof(Shots)])
+                {
+                    _shots.Add(new Shot((JObject)i));
+                }
+
+            }
         }
     }
 }

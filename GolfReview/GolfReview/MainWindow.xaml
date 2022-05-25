@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GolfReview"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="20"/>
+            <!--<RowDefinition Height="20"/>-->
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
@@ -30,13 +30,10 @@
             </MenuItem>
         </Menu>
         
-        <!-- Row 2 -->
-        <!--<Image Grid.Row="2" Grid.Column="2" Name="imageHoleMap" Source="/GolfReview;component/Images/AugustaNationalGolfCourse/Hole1.jpg"/>-->
-        <!--<Image Grid.Row="2" Grid.Column="2" Name="imageHoleMap"/>-->
-        <Canvas Grid.Row="2" Grid.Column="2" Name="canvasHoleMap"/>
+        <!--Row 1-->
+        <Canvas Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Name="canvasHoleMap" Width="300" Height="900"/>
 
-        <!-- Row 3 -->
-        <DataGrid Grid.Row="3" Grid.Column="2" Name="dataGridScores" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}"/>
@@ -48,6 +45,11 @@
                 <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}"/>
             </DataGrid.Columns>
         </DataGrid>
+
+        <!--Row 3-->
+        
+        <!-- Row 4 -->
+
 
     </Grid>
 </Window>
