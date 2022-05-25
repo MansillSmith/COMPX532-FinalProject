@@ -41,14 +41,35 @@ namespace GolfReview
             playersList.Insert(0, GetParPlayer());
             dataGridScores.ItemsSource = playersList;
 
-            BitmapImage holeImage = new BitmapImage();
-            holeImage.BeginInit();
-            holeImage.UriSource = new Uri("/GolfReview;component/Images/AugustaNationalGolfCourse/Hole1.jpg", UriKind.Relative);
-            holeImage.EndInit();
-            imageHoleMap.Source = holeImage;
+            DrawHoleOnScreen();
+            DrawPlayersShots();
+
+            Line myLine = new Line();
+            myLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
+            myLine.X1 = 1;
+            myLine.X2 = 50;
+            myLine.Y1 = 1;
+            myLine.Y2 = 50;
+            myLine.HorizontalAlignment = HorizontalAlignment.Left;
+            myLine.VerticalAlignment = VerticalAlignment.Center;
+            myLine.StrokeThickness = 2;
+            canvasHoleMap.Children.Add(myLine);
+            //imageHoleMap.Children.Add(myLine);
 
             //Bitmap image = new Bitmap(assembly.GetManifestResourceStream(AUGUSTA_HOLE_FOLER));
             //imageHoleMap.Source = (ImageSource)image;
+        }
+
+        public void DrawPlayersShots()
+        {
+
+        }
+
+        public void DrawHoleOnScreen()
+        {
+            ImageBrush ib = new ImageBrush();
+            ib.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Hole1.jpg", UriKind.RelativeOrAbsolute));
+            canvasHoleMap.Background = ib;
         }
 
         public void LoadPlayers()

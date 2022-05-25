@@ -32,7 +32,8 @@
         
         <!-- Row 2 -->
         <!--<Image Grid.Row="2" Grid.Column="2" Name="imageHoleMap" Source="/GolfReview;component/Images/AugustaNationalGolfCourse/Hole1.jpg"/>-->
-        <Image Grid.Row="2" Grid.Column="2" Name="imageHoleMap"/>
+        <!--<Image Grid.Row="2" Grid.Column="2" Name="imageHoleMap"/>-->
+        <Canvas Grid.Row="2" Grid.Column="2" Name="canvasHoleMap"/>
 
         <!-- Row 3 -->
         <DataGrid Grid.Row="3" Grid.Column="2" Name="dataGridScores" AutoGenerateColumns="False">
