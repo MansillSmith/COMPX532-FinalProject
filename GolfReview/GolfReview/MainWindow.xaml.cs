@@ -31,12 +31,14 @@ namespace GolfReview
         string AUGUSTA_CARD = DATA_FOLDER + ".AugustaNationalCard.json";
         string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
 
-        int currentHoleToDisplay = 1;
-        new List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { System.Windows.Media.Brushes.LightSteelBlue, System.Windows.Media.Brushes.Black };
+        int currentHoleToDisplay = 0;
+        List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { System.Windows.Media.Brushes.LightSteelBlue, System.Windows.Media.Brushes.Black };
 
         List<Player> playersList;
 
         Assembly assembly = Assembly.GetExecutingAssembly();
+
+        List<int> parScores = new List<int>();
 
         public MainWindow()
         {
@@ -47,42 +49,6 @@ namespace GolfReview
             dataGridScores.ItemsSource = playersList;
 
             ChangeHole();
-
-            //List<PieChartItem> piechartList = new List<PieChartItem>()
-            //{
-            //    new PieChartItem() {Name="Par", Number=3},
-            //    new PieChartItem() {Name="Bogey", Number=1},
-            //    new PieChartItem() {Name="Birdie", Number=1}
-            //};
-
-            ((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]
-            {
-                new KeyValuePair<string, int> ("Par", 3),
-                new KeyValuePair<string, int> ("Bogey", 1),
-                new KeyValuePair<string, int> ("Birdie", 1)
-            };
-
-            //((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[] {
-            //    new KeyValuePair<string, int>("Project Manager", 12),  
-            //    new KeyValuePair<string, int>("CEO", 25),  
-            //    new KeyValuePair<string, int>("Software Engg.", 5),  
-            //    new KeyValuePair<string, int>("Team Leader", 6),  
-            //    new KeyValuePair<string, int>("Project Leader", 10),  
-            //    new KeyValuePair<string, int>("Developer", 4)
-            //};
-            //DrawHoleOnScreen();
-            //DrawPlayersShots();
-
-            //    Line myLine = new Line();
-            //    myLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
-            //    myLine.X1 = 0;
-            //    myLine.X2 = 50;
-            //    myLine.Y1 = 0;
-            //    myLine.Y2 = 50;
-            //    myLine.HorizontalAlignment = HorizontalAlignment.Left;
-            //    myLine.VerticalAlignment = VerticalAlignment.Center;
-            //    myLine.StrokeThickness = 2;
-            //    canvasHoleMap.Children.Add(myLine);
         }
 
         public void DrawPlayersShots()
@@ -143,7 +109,13 @@ namespace GolfReview
                 parCardJSON = JObject.Parse(reader.ReadToEnd());
             }
 
-            return new Player(parCardJSON);
+            Player p = new Player(parCardJSON);
+            for(int i = 0; i < p.Holes.Count(); i++)
+            {
+                parScores.Add(p.Holes[i].Score);
+            }
+
+            return p;
         }
 
         private List<Player> ConvertJSONToPlayers(JObject jobject)
@@ -198,11 +170,88 @@ namespace GolfReview
             //}
         }
 
+        public void SetPieChart()
+        {
+            //((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]
+            //{
+            //    new KeyValuePair<string, int> ("Par", 3),
+            //    new KeyValuePair<string, int> ("Bogey", 1),
+            //    new KeyValuePair<string, int> ("Birdie", 1)
+            //};
+
+            int albatross = 0;
+            int eagle = 0;
+            int birdie = 0;
+            int par = 0;
+            int bogey = 0;
+            int higherBogey = 0;
+
+            //KeyValuePair<string, int>[] array = new KeyValuePair<string, int>[playersList.Count() - 1];
+            for (int i = 1; i < playersList.Count(); i++)
+            {
+                int diff = parScores[currentHoleToDisplay] - playersList[i].Holes[currentHoleToDisplay].Score;
+
+                if(diff == -3)
+                {
+                    albatross++;
+                }
+                else if(diff == -2)
+                {
+                    eagle++;
+                }
+                else if (diff == -1)
+                {
+                    birdie++;
+                }
+                else if (diff == 0)
+                {
+                    par++;
+                }
+                else if (diff == 1)
+                {
+                    bogey++;
+                }
+                else
+                {
+                    higherBogey++;
+                }
+            }
+
+            List<KeyValuePair<string, int>> l = new List<KeyValuePair<string, int>>();
+            if(albatross != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("Albatross", albatross));
+            }
+            if(eagle != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("Eagle", eagle));
+            }
+            if (birdie != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("Birdie", birdie));
+            }
+            if (par != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("Par", par));
+            }
+            if (bogey != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("Bogey", bogey));
+            }
+            if(higherBogey != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("Double Bogey +", higherBogey));
+            }
+
+             ((PieSeries)pieChart.Series[0]).ItemsSource = l.ToArray();
+        }
+
         public void ChangeHole()
         {
             canvasHoleMap.Children.Clear();
             DrawHoleOnScreen();
             DrawPlayersShots();
+            SetPieChart();
         }
     }
 }

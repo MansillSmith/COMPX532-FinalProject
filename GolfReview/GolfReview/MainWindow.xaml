@@ -40,9 +40,9 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Text="The Masters 2022 - Round 4" FontSize="24"/>
         
         <!--Row 3-->
-        <DVC:Chart Grid.Row="3" Grid.Column="3" Name="pieChart" Title="Scores" MinHeight="400" BorderThickness="0">
+        <DVC:Chart Grid.Row="3" Grid.Column="3" Name="pieChart" Title="Scores" MinHeight="300" BorderThickness="0">
             <DVC:Chart.Series>
-                <DVC:PieSeries Title="Scores" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}" />
+                <DVC:PieSeries Title="Scores" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"/>
             </DVC:Chart.Series>
         </DVC:Chart>
 
