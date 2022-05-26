@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GolfReview"
         mc:Ignorable="d" FontFamily="Segoe UI Light"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
         Title="Golf Review" Height="450" Width="800" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -17,6 +18,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -36,11 +38,20 @@
         
         <!--Row 2-->
         <TextBlock Grid.Row="2" Grid.Column="1" Text="The Masters 2022 - Round 4" FontSize="24"/>
-
+        
         <!--Row 3-->
-        <Canvas Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Name="canvasHoleMap" Width="300" Height="900"/>
+        <DVC:Chart Grid.Row="3" Grid.Column="3" Name="pieChart" Title="Scores" MinHeight="400" BorderThickness="0">
+            <DVC:Chart.Series>
+                <DVC:PieSeries Title="Scores" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}" />
+            </DVC:Chart.Series>
+        </DVC:Chart>
 
-        <DataGrid Grid.Row="3" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
+        <Canvas Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
+
+        <!--Row 4-->
+        
+
+        <DataGrid Grid.Row="4" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
                 <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>

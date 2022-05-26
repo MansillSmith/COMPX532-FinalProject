@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.DataVisualization.Charting;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -46,6 +47,29 @@ namespace GolfReview
             dataGridScores.ItemsSource = playersList;
 
             ChangeHole();
+
+            //List<PieChartItem> piechartList = new List<PieChartItem>()
+            //{
+            //    new PieChartItem() {Name="Par", Number=3},
+            //    new PieChartItem() {Name="Bogey", Number=1},
+            //    new PieChartItem() {Name="Birdie", Number=1}
+            //};
+
+            ((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]
+            {
+                new KeyValuePair<string, int> ("Par", 3),
+                new KeyValuePair<string, int> ("Bogey", 1),
+                new KeyValuePair<string, int> ("Birdie", 1)
+            };
+
+            //((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[] {
+            //    new KeyValuePair<string, int>("Project Manager", 12),  
+            //    new KeyValuePair<string, int>("CEO", 25),  
+            //    new KeyValuePair<string, int>("Software Engg.", 5),  
+            //    new KeyValuePair<string, int>("Team Leader", 6),  
+            //    new KeyValuePair<string, int>("Project Leader", 10),  
+            //    new KeyValuePair<string, int>("Developer", 4)
+            //};
             //DrawHoleOnScreen();
             //DrawPlayersShots();
 
