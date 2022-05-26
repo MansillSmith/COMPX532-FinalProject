@@ -5,103 +5,103 @@
 			"Nationality": "United States",
 			"Holes": [
 				{
-					"Hole Number": 1,
+					"HoleNumber": 1,
 					"Score": 4,
 					"Shots":[
 						{
 							"Club": "Driver",
 							"Distance": 289,
-							"EndPosition": {
-								"X": 10,
-								"Y": 289
-							}
+							"X1": 213,
+							"Y1": 864,
+							"X2": 34,
+							"Y2": 380
 						},
 						{
 							"Club": "5 Iron",
 							"Distance": 189,
-							"EndPosition": {
-								"X": 30,
-								"Y": 460
-							}
+							"X1": 34,
+							"Y1": 380,
+							"X2": 165,
+							"Y2": 45
 						},
 						{
 							"Club": "52 Degree",
 							"Distance": 26,
-							"EndPosition":{
-								"X": 30,
-								"Y": 444
-							}
+							"X1": 165,
+							"Y1": 45,
+							"X2": 164,
+							"Y2": 93
 						},
 						{
 							"Club": "Putter",
 							"Distance" : 1,
-							"EndPosition": {
-								"X": 30,
-								"Y": 445
-							}
+							"X1": 164,
+							"Y1": 93,
+							"X2": 164,
+							"Y2": 92
 						}
 					]
 				},
 				{
-					"Hole Number": 2,
+					"HoleNumber": 2,
 					"Score": 5,
 					"Shots": [
 						{
 							"Club": "Driver",
 							"Distance": 338,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "6 Iron",
 							"Distance": 197,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "56 Degree",
 							"Distance": 44,
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						},
 						{
 							"Club": "Putter",
-							"Distance": 4
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
-						,
+							"Distance": 4,
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
+						},
 						{
 							"Club": "Putter",
-							"Distance": 1
-							"EndPosition": {
-								"X": 30,
-								"Y": 338
-							}
+							"Distance": 1,
+							"X1": 30,
+							"Y1": 338,
+							"X2": 20,
+							"Y2": 299
 						}
 					]
 				},
 				{
-					"Hole Number": 3,
+					"HoleNumber": 3,
 					"Score": 3
 				},
 				{
-					"Hole Number": 4,
+					"HoleNumber": 4,
 					"Score": 3
 				},
 				{
-					"Hole Number": 5,
+					"HoleNumber": 5,
 					"Score": 4
 				},
 				{
-					"Hole Number": 6,
+					"HoleNumber": 6,
 					"Score": 3
 				}
 			]
@@ -111,61 +111,53 @@
 			"Nationality": "Northern Ireland",
 			"Holes": [
 				{
-					"Hole Number": 1,
+					"HoleNumber": 1,
 					"Score": 3,
 					"Shots":[
 						{
 							"Club": "Driver",
 							"Distance": 289,
-							"EndPosition": {
-								"X": 10,
-								"Y": 289
-							}
+							"X1": 213,
+							"Y1": 864,
+							"X2": 100,
+							"Y2": 343
 						},
 						{
 							"Club": "5 Iron",
 							"Distance": 189,
-							"EndPosition": {
-								"X": 30,
-								"Y": 460
-							}
-						},
-						{
-							"Club": "52 Degree",
-							"Distance": 26,
-							"EndPosition":{
-								"X": 30,
-								"Y": 444
-							}
+							"X1": 100,
+							"Y1": 343,
+							"X2": 171,
+							"Y2": 92
 						},
 						{
 							"Club": "Putter",
 							"Distance" : 1,
-							"EndPosition": {
-								"X": 30,
-								"Y": 445
-							}
+							"X1": 171,
+							"Y1": 92,
+							"X2": 164,
+							"Y2": 92
 						}
 					]
 				},
 				{
-					"Hole Number": 2,
+					"HoleNumber": 2,
 					"Score": 5
 				},
 				{
-					"Hole Number": 3,
+					"HoleNumber": 3,
 					"Score": 3
 				},
 				{
-					"Hole Number": 4,
+					"HoleNumber": 4,
 					"Score": 3
 				},
 				{
-					"Hole Number": 5,
+					"HoleNumber": 5,
 					"Score": 4
 				},
 				{
-					"Hole Number": 6,
+					"HoleNumber": 6,
 					"Score": 3
 				}
 			]

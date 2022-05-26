@@ -65,18 +65,29 @@ namespace GolfReview
             {
                 for (int i = 0; i < playersList[j].Holes[currentHoleToDisplay].Shots.Count; i++)
                 {
+                    
                     Line tempLine = new Line();
                     tempLine.Stroke = listBrushes[j-1];
-                    tempLine.X1 = playersList[j].Holes[currentHoleToDisplay].Shots[i].X1;
-                    tempLine.X2 = playersList[j].Holes[currentHoleToDisplay].Shots[i].X2;
-                    tempLine.Y1 = playersList[j].Holes[currentHoleToDisplay].Shots[i].Y1;
-                    tempLine.Y2 = playersList[j].Holes[currentHoleToDisplay].Shots[i].Y2;
+                    tempLine.X1 = ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X1);
+                    tempLine.X2 = ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X2);
+                    tempLine.Y1 = ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y1);
+                    tempLine.Y2 = ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y2);
                     tempLine.HorizontalAlignment = HorizontalAlignment.Left;
                     tempLine.VerticalAlignment = VerticalAlignment.Center;
                     tempLine.StrokeThickness = 2;
                     canvasHoleMap.Children.Add(tempLine);
                 }
             }
+        }
+
+        public int ConvertXPoint(float x)
+        {
+            return (int)(canvasHoleMap.Width * x);
+        }
+
+        public int ConvertYPoint(float y)
+        {
+            return (int)(canvasHoleMap.Height * y);
         }
 
         public void DrawHoleOnScreen()

@@ -23,30 +23,30 @@ namespace GolfReview
             get { return _distance; }
         }
 
-        private int _x1;
+        private float _x1;
 
-        public int X1
+        public float X1
         {
             get { return _x1; }
         }
 
-        private int _x2;
+        private float _x2;
 
-        public int X2
+        public float X2
         {
             get { return _x2; }
         }
 
-        private int _y1;
+        private float _y1;
 
-        public int Y1
+        public float Y1
         {
             get { return _y1; }
         }
 
-        private int _y2;
+        private float _y2;
 
-        public int Y2
+        public float Y2
         {
             get { return _y2; }
         }
@@ -55,10 +55,10 @@ namespace GolfReview
         {
             _club = (string)jObject[nameof(Club)];
             _distance = (int)jObject[nameof(Distance)];
-            _x1 = (int)jObject[nameof(X1)];
-            _x2 = (int)jObject[nameof(X2)];
-            _y1 = (int)jObject[nameof(Y1)];
-            _y2 = (int)jObject[nameof(Y2)];
+            _x1 = (float)jObject[nameof(X1)];
+            _x2 = (float)jObject[nameof(X2)];
+            _y1 = (float)jObject[nameof(Y1)];
+            _y2 = (float)jObject[nameof(Y2)];
         }
     }
 }

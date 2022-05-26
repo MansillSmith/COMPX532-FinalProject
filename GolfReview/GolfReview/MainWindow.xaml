@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <!--<RowDefinition Height="20"/>-->
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
@@ -29,11 +29,11 @@
                 <MenuItem Header="Create"/>
             </MenuItem>
         </Menu>
-        
-        <!--Row 1-->
-        <Canvas Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Name="canvasHoleMap" Width="300" Height="900"/>
 
-        <DataGrid Grid.Row="1" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False">
+        <!--Row 2-->
+        <Canvas Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Name="canvasHoleMap" Width="300" Height="500"/>
+
+        <DataGrid Grid.Row="2" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
                 <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}"/>
