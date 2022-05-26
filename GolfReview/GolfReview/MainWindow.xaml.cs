@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -29,7 +30,7 @@ namespace GolfReview
         string AUGUSTA_CARD = DATA_FOLDER + ".AugustaNationalCard.json";
         string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
 
-        int currentHoleToDisplay = 0;
+        int currentHoleToDisplay = 1;
         new List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { System.Windows.Media.Brushes.LightSteelBlue, System.Windows.Media.Brushes.Black };
 
         List<Player> playersList;
@@ -44,8 +45,9 @@ namespace GolfReview
             playersList.Insert(0, GetParPlayer());
             dataGridScores.ItemsSource = playersList;
 
-            DrawHoleOnScreen();
-            DrawPlayersShots();
+            ChangeHole();
+            //DrawHoleOnScreen();
+            //DrawPlayersShots();
 
             //    Line myLine = new Line();
             //    myLine.Stroke = System.Windows.Media.Brushes.LightSteelBlue;
@@ -93,7 +95,7 @@ namespace GolfReview
         public void DrawHoleOnScreen()
         {
             ImageBrush ib = new ImageBrush();
-            ib.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Hole1.jpg", UriKind.RelativeOrAbsolute));
+            ib.ImageSource = new BitmapImage(new Uri("pack://application:,,,/Images/Hole" + (currentHoleToDisplay + 1).ToString() + ".jpg", UriKind.RelativeOrAbsolute));
             canvasHoleMap.Background = ib;
         }
 
@@ -135,7 +137,48 @@ namespace GolfReview
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine(Mouse.GetPosition(canvasHoleMap));
+            System.Windows.Point p = Mouse.GetPosition(canvasHoleMap);
+            double x = p.X / canvasHoleMap.Width;
+            double y = p.Y / canvasHoleMap.Height;
+
+            Console.WriteLine(x + ", " + y);
+        }
+
+        private void dataGridScores_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            // TODO: Add event handler implementation here.
+            DependencyObject dep = (DependencyObject)e.OriginalSource;
+            // iteratively traverse the visual tree
+            while ((dep != null) &&
+                    !(dep is DataGridCell) &&
+                    !(dep is DataGridColumnHeader))
+            {
+                dep = VisualTreeHelper.GetParent(dep);
+            }
+
+            //if (dep == null)
+            //    return;
+
+            if (dep is DataGridColumnHeader)
+            {
+                DataGridColumnHeader columnHeader = dep as DataGridColumnHeader;
+                // do something
+                currentHoleToDisplay = int.Parse(columnHeader.Column.Header.ToString()) - 1;
+                ChangeHole();
+            }
+
+            //if (dep is DataGridCell)
+            //{
+            //    DataGridCell cell = dep as DataGridCell;
+            //    // do something
+            //}
+        }
+
+        public void ChangeHole()
+        {
+            canvasHoleMap.Children.Clear();
+            DrawHoleOnScreen();
+            DrawPlayersShots();
         }
     }
 }

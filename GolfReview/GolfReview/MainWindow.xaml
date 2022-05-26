@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GolfReview"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+        mc:Ignorable="d" FontFamily="Segoe UI Light"
+        Title="Golf Review" Height="450" Width="800" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -19,6 +19,7 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -30,19 +31,25 @@
             </MenuItem>
         </Menu>
 
+        <!--Row 1-->
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="Golf Review" FontSize="30"/>
+        
         <!--Row 2-->
-        <Canvas Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Name="canvasHoleMap" Width="300" Height="500"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="The Masters 2022 - Round 4" FontSize="24"/>
 
-        <DataGrid Grid.Row="2" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False">
+        <!--Row 3-->
+        <Canvas Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Name="canvasHoleMap" Width="300" Height="900"/>
+
+        <DataGrid Grid.Row="3" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
-                <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}"/>
-                <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}"/>
-                <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}"/>
-                <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}"/>
-                <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}"/>
-                <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}"/>
-                <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
             </DataGrid.Columns>
         </DataGrid>
 
