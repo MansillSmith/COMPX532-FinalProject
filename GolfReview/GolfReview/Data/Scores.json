@@ -161,6 +161,126 @@
 					"Score": 3
 				}
 			]
+		},
+		{
+			"Name": "Shane Lowry",
+			"Nationality": "Ireland",
+			"Holes": [
+				{
+					"HoleNumber": 1,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 2,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 3,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 4,
+					"Score": 6
+				},
+				{
+					"HoleNumber": 5,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 6,
+					"Score": 2
+				}
+			]
+		},
+		{
+			"Name": "Cameron Smith",
+			"Nationality": "Australia",
+			"Holes": [
+				{
+					"HoleNumber": 1,
+					"Score": 3
+				},
+				{
+					"HoleNumber": 2,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 3,
+					"Score": 5
+				},
+				{
+					"HoleNumber": 4,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 5,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 6,
+					"Score": 3
+				}
+			]
+		},
+		{
+			"Name": "Colin Morikawa",
+			"Nationality": "United States",
+			"Holes": [
+				{
+					"HoleNumber": 1,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 2,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 3,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 4,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 5,
+					"Score": 5
+				},
+				{
+					"HoleNumber": 6,
+					"Score": 3
+				}
+			]
+		},
+		{
+			"Name": "Will Zalatoris",
+			"Nationality": "United States",
+			"Holes": [
+				{
+					"HoleNumber": 1,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 2,
+					"Score": 6
+				},
+				{
+					"HoleNumber": 3,
+					"Score": 4
+				},
+				{
+					"HoleNumber": 4,
+					"Score": 3
+				},
+				{
+					"HoleNumber": 5,
+					"Score": 3
+				},
+				{
+					"HoleNumber": 6,
+					"Score": 3
+				}
+			]
 		}
 	]
 }
