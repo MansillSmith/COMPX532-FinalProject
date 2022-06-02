@@ -32,7 +32,14 @@ namespace GolfReview
         string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
 
         int currentHoleToDisplay = 0;
-        List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { System.Windows.Media.Brushes.LightSteelBlue, System.Windows.Media.Brushes.Black };
+        List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { 
+            System.Windows.Media.Brushes.LightSteelBlue, 
+            System.Windows.Media.Brushes.Black,
+            System.Windows.Media.Brushes.LightSalmon,
+            System.Windows.Media.Brushes.Brown,
+            System.Windows.Media.Brushes.MediumPurple,
+            System.Windows.Media.Brushes.Khaki
+        };
 
         List<Player> playersList;
 
@@ -122,10 +129,11 @@ namespace GolfReview
         {
             List<Player> playersList = new List<Player>();
             JArray jArray = (JArray)jobject["Players"];
+            int count = 0;
             foreach (var i in jArray)
             {
-
-                playersList.Add(new Player((JObject)i));
+                playersList.Add(new Player((JObject)i, listBrushes[count]));
+                count++;
             }
 
             return playersList;

@@ -83,8 +83,14 @@ namespace GolfReview
             get { return _image; }
         }
 
+        private System.Windows.Media.Brush _brush;
 
-        public Player (JObject jObject)
+        public System.Windows.Media.Brush Brush
+        {
+            get { return _brush; }
+        }
+
+        private void Constructor(JObject jObject)
         {
             if (jObject.ContainsKey(nameof(Player.Name)))
             {
@@ -110,12 +116,24 @@ namespace GolfReview
             this._hole5 = Holes[4].Score;
             this._hole6 = Holes[5].Score;
 
-            if(this.Name != null)
+            if (this.Name != null)
             {
                 string[] names = this.Name.Split(' ');
 
                 this._image = new BitmapImage(new Uri("pack://application:,,,/Images/player" + names[0] + names[1] + ".jpg", UriKind.RelativeOrAbsolute));
             }
+        }
+
+        public Player (JObject jObject, System.Windows.Media.Brush brush)
+        {
+            Constructor(jObject);
+            this._brush = brush;
+        }
+
+
+        public Player (JObject jObject)
+        {
+            Constructor(jObject);
         }
     }
 }

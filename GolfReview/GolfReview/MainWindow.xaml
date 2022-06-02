@@ -52,6 +52,13 @@
         <DataGrid Grid.Row="4" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Key" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell" >
+                            <Setter Property="Background" Value="{Binding Brush}"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
                 <DataGridTemplateColumn Header="Pic" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
