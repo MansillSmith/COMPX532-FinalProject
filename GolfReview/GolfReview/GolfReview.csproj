@@ -134,5 +134,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\playerCameronSmith.jpg" />
+    <Resource Include="Images\playerCollinMorikawa.jpg" />
+    <Resource Include="Images\playerRoryMcIlroy.jpg" />
+    <Resource Include="Images\playerScottieScheffler.jpg" />
+    <Resource Include="Images\playerShaneLowry.jpg" />
+    <Resource Include="Images\playerWillZalatoris.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
