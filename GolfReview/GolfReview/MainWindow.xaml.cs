@@ -62,19 +62,22 @@ namespace GolfReview
         {
             for(int j = 1; j < playersList.Count(); j++)
             {
-                for (int i = 0; i < playersList[j].Holes[currentHoleToDisplay].Shots.Count; i++)
+                if (playersList[j].Selected)
                 {
-                    
-                    Line tempLine = new Line();
-                    tempLine.Stroke = listBrushes[j-1];
-                    tempLine.X1 = ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X1);
-                    tempLine.X2 = ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X2);
-                    tempLine.Y1 = ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y1);
-                    tempLine.Y2 = ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y2);
-                    tempLine.HorizontalAlignment = HorizontalAlignment.Left;
-                    tempLine.VerticalAlignment = VerticalAlignment.Center;
-                    tempLine.StrokeThickness = 2;
-                    canvasHoleMap.Children.Add(tempLine);
+                    for (int i = 0; i < playersList[j].Holes[currentHoleToDisplay].Shots.Count; i++)
+                    {
+
+                        Line tempLine = new Line();
+                        tempLine.Stroke = listBrushes[j - 1];
+                        tempLine.X1 = ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X1);
+                        tempLine.X2 = ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X2);
+                        tempLine.Y1 = ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y1);
+                        tempLine.Y2 = ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y2);
+                        tempLine.HorizontalAlignment = HorizontalAlignment.Left;
+                        tempLine.VerticalAlignment = VerticalAlignment.Center;
+                        tempLine.StrokeThickness = 2;
+                        canvasHoleMap.Children.Add(tempLine);
+                    }
                 }
             }
         }
@@ -171,14 +174,24 @@ namespace GolfReview
                 //If the selected coloumn is a hole
                 try
                 {
-                    currentHoleToDisplay = int.Parse(columnHeader.Column.Header.ToString()) - 1;
-                    ChangeHole();
+                    int clickedHole = int.Parse(columnHeader.Column.Header.ToString()) - 1;
+                    if (clickedHole != currentHoleToDisplay)
+                    {
+                        currentHoleToDisplay = clickedHole;
+                        ChangeHole();
+                    }
                 }
                 catch
                 {
 
                 }
             }
+            else
+            {
+                canvasHoleMap.Children.Clear();
+                DrawPlayersShots();
+            }
+
 
             //if (dep is DataGridCell)
             //{

@@ -49,30 +49,31 @@
         <Canvas Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
 
         <!--Row 4-->
-        <DataGrid Grid.Row="4" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
+        <DataGrid Grid.Row="4" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="Key" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50">
+                <DataGridCheckBoxColumn Header="Selected" Binding="{Binding Path=Selected, Mode=TwoWay}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Key" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50" IsReadOnly="True">
                     <DataGridTextColumn.CellStyle>
                         <Style TargetType="DataGridCell" >
                             <Setter Property="Background" Value="{Binding Brush}"/>
                         </Style>
                     </DataGridTextColumn.CellStyle>
                 </DataGridTextColumn>
-                <DataGridTemplateColumn Header="Pic" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50">
+                <DataGridTemplateColumn Header="Pic" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Image Source="{Binding Image}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 

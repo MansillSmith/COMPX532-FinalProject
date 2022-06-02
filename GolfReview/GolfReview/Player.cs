@@ -90,6 +90,15 @@ namespace GolfReview
             get { return _brush; }
         }
 
+        private bool _selected;
+
+        public bool Selected
+        {
+            get { return _selected; }
+            set { _selected = value; }
+        }
+
+
         private void Constructor(JObject jObject)
         {
             if (jObject.ContainsKey(nameof(Player.Name)))
@@ -115,6 +124,7 @@ namespace GolfReview
             this._hole4 = Holes[3].Score;
             this._hole5 = Holes[4].Score;
             this._hole6 = Holes[5].Score;
+            this.Selected = true;
 
             if (this.Name != null)
             {
