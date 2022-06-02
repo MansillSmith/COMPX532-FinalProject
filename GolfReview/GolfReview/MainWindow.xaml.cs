@@ -159,8 +159,17 @@ namespace GolfReview
             {
                 DataGridColumnHeader columnHeader = dep as DataGridColumnHeader;
                 // do something
-                currentHoleToDisplay = int.Parse(columnHeader.Column.Header.ToString()) - 1;
-                ChangeHole();
+
+                //If the selected coloumn is a hole
+                try
+                {
+                    currentHoleToDisplay = int.Parse(columnHeader.Column.Header.ToString()) - 1;
+                    ChangeHole();
+                }
+                catch
+                {
+
+                }
             }
 
             //if (dep is DataGridCell)

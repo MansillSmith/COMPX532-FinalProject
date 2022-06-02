@@ -49,11 +49,16 @@
         <Canvas Grid.Row="3" Grid.Column="1" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
 
         <!--Row 4-->
-        
-
         <DataGrid Grid.Row="4" Grid.Column="3" Name="dataGridScores" AutoGenerateColumns="False" IsReadOnly="True" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                <DataGridTemplateColumn Header="Pic" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
                 <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
                 <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>

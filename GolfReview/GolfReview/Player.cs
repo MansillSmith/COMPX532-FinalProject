@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace GolfReview
 {
@@ -75,6 +76,14 @@ namespace GolfReview
             get { return _hole6; }
         }
 
+        private BitmapImage _image;
+
+        public BitmapImage Image
+        {
+            get { return _image; }
+        }
+
+
         public Player (JObject jObject)
         {
             if (jObject.ContainsKey(nameof(Player.Name)))
@@ -101,6 +110,12 @@ namespace GolfReview
             this._hole5 = Holes[4].Score;
             this._hole6 = Holes[5].Score;
 
+            if(this.Name != null)
+            {
+                string[] names = this.Name.Split(' ');
+
+                this._image = new BitmapImage(new Uri("pack://application:,,,/Images/player" + names[0] + names[1] + ".jpg", UriKind.RelativeOrAbsolute));
+            }
         }
     }
 }

@@ -135,12 +135,24 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\playerCameronSmith.jpg" />
-    <Resource Include="Images\playerCollinMorikawa.jpg" />
-    <Resource Include="Images\playerRoryMcIlroy.jpg" />
-    <Resource Include="Images\playerScottieScheffler.jpg" />
-    <Resource Include="Images\playerShaneLowry.jpg" />
-    <Resource Include="Images\playerWillZalatoris.jpg" />
+    <Resource Include="Images\playerCameronSmith.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\playerCollinMorikawa.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\playerRoryMcIlroy.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\playerScottieScheffler.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\playerShaneLowry.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\playerWillZalatoris.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
