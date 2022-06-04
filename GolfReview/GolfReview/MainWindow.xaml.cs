@@ -200,7 +200,73 @@ namespace GolfReview
             //}
         }
 
-        public void SetPieChart()
+        public void SetPieChartPutts()
+        {
+            int noPutts = 0;
+            int onePutt = 0;
+            int twoPutt = 0;
+            int threePutt = 0;
+            int fourPuttPlus = 0;
+
+            for(int i = 1; i < playersList.Count(); i++)
+            {
+                int numPutts = 0;
+                for(int j = 0; j < playersList[i].Holes[currentHoleToDisplay].Shots.Count(); j++)
+                {
+                    if(playersList[i].Holes[currentHoleToDisplay].Shots[j].Club == "Putter")
+                    {
+                        numPutts++;
+                    }
+                }
+
+                if(numPutts == 0)
+                {
+                    noPutts++;
+                }
+                else if(numPutts == 1)
+                {
+                    onePutt++;
+                }
+                else if (numPutts == 2)
+                {
+                    twoPutt++;
+                }
+                else if (numPutts == 3)
+                {
+                    threePutt++;
+                }
+                else
+                {
+                    fourPuttPlus++;
+                }
+            }
+
+            List<KeyValuePair<string, int>> l = new List<KeyValuePair<string, int>>();
+            if(noPutts != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("0 Putts", noPutts));
+            }
+            if (onePutt != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("1 Putt", onePutt));
+            }
+            if (twoPutt != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("2 Putt", twoPutt));
+            }
+            if (threePutt != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("3 Putt", threePutt));
+            }
+            if (fourPuttPlus != 0)
+            {
+                l.Add(new KeyValuePair<string, int>("4 Putt +", fourPuttPlus));
+            }
+
+            ((PieSeries)pieChartPutts.Series[0]).ItemsSource = l.ToArray();
+        }
+
+        public void SetPieChartScores()
         {
             //((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]
             //{
@@ -273,7 +339,7 @@ namespace GolfReview
                 l.Add(new KeyValuePair<string, int>("Double Bogey +", higherBogey));
             }
 
-             ((PieSeries)pieChart.Series[0]).ItemsSource = l.ToArray();
+             ((PieSeries)pieChartScores.Series[0]).ItemsSource = l.ToArray();
         }
 
         public void ChangeHole()
@@ -281,7 +347,8 @@ namespace GolfReview
             canvasHoleMap.Children.Clear();
             DrawHoleOnScreen();
             DrawPlayersShots();
-            SetPieChart();
+            SetPieChartScores();
+            SetPieChartPutts();
         }
     }
 }
