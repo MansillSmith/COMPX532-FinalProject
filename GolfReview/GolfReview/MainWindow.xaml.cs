@@ -268,12 +268,6 @@ namespace GolfReview
 
         public void SetPieChartScores()
         {
-            //((PieSeries)pieChart.Series[0]).ItemsSource = new KeyValuePair<string, int>[]
-            //{
-            //    new KeyValuePair<string, int> ("Par", 3),
-            //    new KeyValuePair<string, int> ("Bogey", 1),
-            //    new KeyValuePair<string, int> ("Birdie", 1)
-            //};
 
             int albatross = 0;
             int eagle = 0;
@@ -342,6 +336,30 @@ namespace GolfReview
              ((PieSeries)pieChartScores.Series[0]).ItemsSource = l.ToArray();
         }
 
+        private void SetPieChartGreenInRegulation()
+        {
+            int greenInRegulation = 0;
+            int holePar = playersList[0].Holes[currentHoleToDisplay].Score;
+            for(int i = 1; i < playersList.Count(); i++)
+            {
+                for(int j = 0; j < playersList[i].Holes[currentHoleToDisplay].Shots.Count(); j++)
+                {
+                    // If the player is using a putter in or before GIR
+                    if(playersList[i].Holes[currentHoleToDisplay].Shots[j].Club == "Putter" && j <= holePar -2 )
+                    {
+                        greenInRegulation++;
+                    }
+                }
+            }
+
+            List<KeyValuePair<string, int>> l = new List<KeyValuePair<string, int>>() {
+                new KeyValuePair<string, int>("GIR", greenInRegulation),
+                new KeyValuePair<string, int>("Not GIR", playersList.Count() - 1 - greenInRegulation)
+            };
+
+            ((PieSeries)pieChartGreensInRegulation.Series[0]).ItemsSource = l.ToArray();
+        }
+
         public void ChangeHole()
         {
             canvasHoleMap.Children.Clear();
@@ -349,6 +367,7 @@ namespace GolfReview
             DrawPlayersShots();
             SetPieChartScores();
             SetPieChartPutts();
+            SetPieChartGreenInRegulation();
         }
     }
 }

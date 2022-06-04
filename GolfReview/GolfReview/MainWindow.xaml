@@ -24,6 +24,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -42,7 +43,7 @@
         <TextBlock Grid.Row="2" Grid.Column="1" Text="The Masters 2022 - Round 4" FontSize="24"/>
         
         <!--Row 3-->
-        <DVC:Chart Grid.Row="3" Grid.Column="1" Name="pieChartScores" Title="Scores" MinHeight="300" BorderThickness="0">
+        <DVC:Chart Grid.Row="3" Grid.Column="1" Name="pieChartScores" Title="Scores" MinHeight="250" BorderThickness="0">
             <DVC:Chart.Series>
                 <DVC:PieSeries Title="Scores" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"/>
             </DVC:Chart.Series>
@@ -51,7 +52,7 @@
         <Canvas Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
 
         <!--Row 4-->
-        <DVC:Chart Grid.Row="4" Grid.Column="1" Name="pieChartPutts" Title="Putts" MinHeight="300" BorderThickness="0">
+        <DVC:Chart Grid.Row="4" Grid.Column="1" Name="pieChartPutts" Title="Putts" MinHeight="250" BorderThickness="0">
             <DVC:Chart.Series>
                 <DVC:PieSeries Title="Putts" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"/>
             </DVC:Chart.Series>
@@ -85,8 +86,13 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!--Row 3-->
-        
+        <!--Row 5-->
+        <DVC:Chart Grid.Row="5" Grid.Column="1" Name="pieChartGreensInRegulation" Title="Greens in Regulation" MinHeight="250" BorderThickness="0">
+            <DVC:Chart.Series>
+                <DVC:PieSeries Title="Putts" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"/>
+            </DVC:Chart.Series>
+        </DVC:Chart>
+
         <!-- Row 4 -->
 
 
