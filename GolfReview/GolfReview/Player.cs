@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
@@ -10,6 +11,12 @@ namespace GolfReview
 {
     public class Player
     {
+        private System.Windows.Media.Brush _bogeyWorseBrush = System.Windows.Media.Brushes.Gray;
+        private System.Windows.Media.Brush _bogeyBrush = System.Windows.Media.Brushes.LightBlue;
+        private System.Windows.Media.Brush _parBrush = System.Windows.Media.Brushes.White;
+        private System.Windows.Media.Brush _birdieBrush = System.Windows.Media.Brushes.LightPink;
+        private System.Windows.Media.Brush _eagleBrush = System.Windows.Media.Brushes.LightGreen;
+
         private string _name;
         /// <summary>
         /// The name of the player
@@ -161,6 +168,134 @@ namespace GolfReview
             get { return _image; }
         }
 
+        private System.Windows.Media.Brush _brushHole1;
+        public System.Windows.Media.Brush BrushHole1
+        {
+            get { return _brushHole1; }
+            set { _brushHole1 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole2;
+        public System.Windows.Media.Brush BrushHole2
+        {
+            get { return _brushHole2; }
+            set { _brushHole2 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole3;
+        public System.Windows.Media.Brush BrushHole3
+        {
+            get { return _brushHole3; }
+            set { _brushHole3 = value; }
+        }
+
+            private System.Windows.Media.Brush _brushHole4;
+        public System.Windows.Media.Brush BrushHole4
+        {
+            get { return _brushHole4; }
+            set { _brushHole4 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole5;
+        public System.Windows.Media.Brush BrushHole5
+        {
+            get { return _brushHole5; }
+            set { _brushHole5 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole6;
+        public System.Windows.Media.Brush BrushHole6
+        {
+            get { return _brushHole6; }
+            set { _brushHole6 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole7;
+        public System.Windows.Media.Brush BrushHole7
+        {
+            get { return _brushHole7; }
+            set { _brushHole7 = value; }
+        }
+
+            private System.Windows.Media.Brush _brushHole8;
+        public System.Windows.Media.Brush BrushHole8
+        {
+            get { return _brushHole8; }
+            set { _brushHole8 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole9;
+        public System.Windows.Media.Brush BrushHole9
+        {
+            get { return _brushHole9; }
+            set { _brushHole9 = value; }
+        }
+
+
+        private System.Windows.Media.Brush _brushHole10;
+        public System.Windows.Media.Brush BrushHole10
+        {
+            get { return _brushHole10; }
+            set { _brushHole10 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole11;
+        public System.Windows.Media.Brush BrushHole11
+        {
+            get { return _brushHole11; }
+            set { _brushHole11 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole12;
+        public System.Windows.Media.Brush BrushHole12
+        {
+            get { return _brushHole12; }
+            set { _brushHole12 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole13;
+        public System.Windows.Media.Brush BrushHole13
+        {
+            get { return _brushHole13; }
+            set { _brushHole13 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole14;
+        public System.Windows.Media.Brush BrushHole14
+        {
+            get { return _brushHole14; }
+            set { _brushHole14 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole15;
+        public System.Windows.Media.Brush BrushHole15
+        {
+            get { return _brushHole15; }
+            set { _brushHole15 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole16;
+        public System.Windows.Media.Brush BrushHole16
+        {
+            get { return _brushHole16; }
+            set { _brushHole16 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole17;
+        public System.Windows.Media.Brush BrushHole17
+        {
+            get { return _brushHole17; }
+            set { _brushHole17 = value; }
+        }
+
+        private System.Windows.Media.Brush _brushHole18;
+        public System.Windows.Media.Brush BrushHole18
+        {
+            get { return _brushHole18; }
+            set { _brushHole18 = value; }
+        }
+
+
         private System.Windows.Media.Brush _brush;
 
         public System.Windows.Media.Brush Brush
@@ -220,6 +355,8 @@ namespace GolfReview
             this._hole18 = Holes[17].Score;
             this.Selected = true;
 
+            this._brushHole1 = System.Windows.Media.Brushes.LightSteelBlue;
+
             if (this.Name != null)
             {
                 string[] names = this.Name.Split(' ');
@@ -228,10 +365,37 @@ namespace GolfReview
             }
         }
 
-        public Player (JObject jObject, System.Windows.Media.Brush brush)
+        public Player (JObject jObject, System.Windows.Media.Brush brush, Player parPlayer)
         {
             Constructor(jObject);
             this._brush = brush;
+
+            for(int i = 0; i < parPlayer.Holes.Count(); i++)
+            {
+                PropertyInfo prop = typeof(Player).GetProperty("BrushHole" + (i + 1));
+                int scoreDiff =  this.Holes[i].Score - parPlayer.Holes[i].Score;
+                if(scoreDiff == -2)
+                {
+                    prop.SetValue(this, _eagleBrush);
+                }
+                else if(scoreDiff == -1)
+                {
+                    prop.SetValue(this, _birdieBrush);
+                }
+                else if (scoreDiff == 0)
+                {
+                    // Nothing
+                    prop.SetValue(this, _parBrush);
+                }
+                else if (scoreDiff == 1)
+                {
+                    prop.SetValue(this, _bogeyBrush);
+                }
+                else
+                {
+                    prop.SetValue(this, _bogeyWorseBrush);
+                }
+            }
         }
 
 

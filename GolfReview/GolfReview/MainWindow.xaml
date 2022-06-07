@@ -9,14 +9,13 @@
         Title="Golf Review" Height="450" Width="800" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -51,39 +50,200 @@
 
         <Canvas Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
 
-        <Grid Grid.Row="3" Grid.Column="5">
+        <Grid Grid.Row="3" Grid.Column="5" Grid.RowSpan="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Width="50" Name="buttonLeftArrow" Click="buttonLeftArrow_Click">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Ellipse Fill="LightBlue" Width="51"/>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-                <StackPanel x:Name="stackPanelLeftButton"/>
-            </Button>
-            <TextBlock Grid.Column="1" Grid.Row="0" Name="textBlockHoleText"/>
-            <Button Grid.Column="2" Grid.Row="0" Width="50" Name="buttonRightArrow" Click="buttonRightArrow_Click">
-                <StackPanel x:Name="stackPanelRightButton"/>
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Ellipse Fill="LightBlue" Width="51"/>
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
+            <Grid Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                
+                <Button Grid.Column="0" Grid.Row="0" Width="50" Name="buttonLeftArrow" Click="buttonLeftArrow_Click" Margin="10">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Fill="#FFCEE7F0" Width="50"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <StackPanel x:Name="stackPanelLeftButton"/>
+                </Button>
+                <TextBlock Grid.Column="1" Grid.Row="0" Name="textBlockHoleText" VerticalAlignment="Center" FontSize="24"/>
+                <Button Grid.Column="2" Grid.Row="0" Width="50" Name="buttonRightArrow" Click="buttonRightArrow_Click" Margin="10">
+                    <StackPanel x:Name="stackPanelRightButton"/>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Ellipse Fill="#FFCEE7F0" Width="50"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+
+            <ScrollViewer Grid.Row="1" Grid.Column="0">
+                <DataGrid  Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="Selected" Binding="{Binding Path=Selected, Mode=TwoWay}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Key" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding Brush}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Pic" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding Image}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole1}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole2}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole3}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole4}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole5}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole6}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="7" Binding="{Binding Path=Hole7}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole7}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="8" Binding="{Binding Path=Hole8}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole8}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="9" Binding="{Binding Path=Hole9}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole9}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="10" Binding="{Binding Path=Hole10}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole10}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="11" Binding="{Binding Path=Hole11}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole11}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="12" Binding="{Binding Path=Hole12}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole12}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="13" Binding="{Binding Path=Hole13}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole13}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="14" Binding="{Binding Path=Hole14}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole14}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="15" Binding="{Binding Path=Hole15}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole15}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="16" Binding="{Binding Path=Hole16}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole16}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="17" Binding="{Binding Path=Hole17}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole17}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="18" Binding="{Binding Path=Hole18}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell" >
+                                    <Setter Property="Background" Value="{Binding BrushHole18}"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="Total" Binding="{Binding Path=Total}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
         </Grid>
 
         <!--Row 4-->
@@ -93,46 +253,7 @@
             </DVC:Chart.Series>
         </DVC:Chart>
         
-        <DataGrid Grid.Row="4" Grid.Column="5" Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
-            <DataGrid.Columns>
-                <DataGridCheckBoxColumn Header="Selected" Binding="{Binding Path=Selected, Mode=TwoWay}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Key" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50" IsReadOnly="True">
-                    <DataGridTextColumn.CellStyle>
-                        <Style TargetType="DataGridCell" >
-                            <Setter Property="Background" Value="{Binding Brush}"/>
-                        </Style>
-                    </DataGridTextColumn.CellStyle>
-                </DataGridTextColumn>
-                <DataGridTemplateColumn Header="Pic" CanUserSort="False" CanUserResize="False" CanUserReorder="False" Width="50" IsReadOnly="True">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Image Source="{Binding Image}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="7" Binding="{Binding Path=Hole7}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="8" Binding="{Binding Path=Hole8}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="9" Binding="{Binding Path=Hole9}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="10" Binding="{Binding Path=Hole10}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="11" Binding="{Binding Path=Hole11}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="12" Binding="{Binding Path=Hole12}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="13" Binding="{Binding Path=Hole13}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="14" Binding="{Binding Path=Hole14}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="15" Binding="{Binding Path=Hole15}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="16" Binding="{Binding Path=Hole16}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="17" Binding="{Binding Path=Hole17}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="18" Binding="{Binding Path=Hole18}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                <DataGridTextColumn Header="Total" Binding="{Binding Path=Total}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        
 
         <!--Row 5-->
         <DVC:Chart Grid.Row="5" Grid.Column="1" Name="pieChartGreensInRegulation" Title="Greens in Regulation" MinHeight="250" BorderThickness="0">

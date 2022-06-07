@@ -53,12 +53,27 @@ namespace GolfReview
         {
             InitializeComponent();
 
-            LoadPlayers();
-            playersList.Insert(0, GetParPlayer());
+            Player parPlayer = GetParPlayer();
+
+            LoadPlayers(parPlayer);
+            playersList.Insert(0, parPlayer);
             dataGridScores.ItemsSource = playersList;
             AddIconsToButtons();
+
             ChangeHole();
         }
+
+        public void SetColoursOfDataGrid()
+        {
+            // For the rows
+            foreach (System.Data.DataRowView dr in dataGridScores.ItemsSource)
+            {
+                for(int i = 0; i < 18; i++)
+                {
+                    ((DataGridCell)dr[i + 5]).Background = System.Windows.Media.Brushes.LightSteelBlue;
+                }
+            }
+        }      
 
         public void AddIconsToButtons()
         {
@@ -107,7 +122,7 @@ namespace GolfReview
             canvasHoleMap.Background = ib;
         }
 
-        public void LoadPlayers()
+        public void LoadPlayers(Player parPlayer)
         {
             //Read the Data JSON File
             JObject scoresJSON = null;
@@ -116,7 +131,7 @@ namespace GolfReview
                 scoresJSON = JObject.Parse(reader.ReadToEnd());
             }
 
-            playersList = ConvertJSONToPlayers(scoresJSON);
+            playersList = ConvertJSONToPlayers(scoresJSON, parPlayer);
         }
 
         private Player GetParPlayer()
@@ -136,14 +151,14 @@ namespace GolfReview
             return p;
         }
 
-        private List<Player> ConvertJSONToPlayers(JObject jobject)
+        private List<Player> ConvertJSONToPlayers(JObject jobject, Player parPlayer)
         {
             List<Player> playersList = new List<Player>();
             JArray jArray = (JArray)jobject["Players"];
             int count = 0;
             foreach (var i in jArray)
             {
-                playersList.Add(new Player((JObject)i, listBrushes[count]));
+                playersList.Add(new Player((JObject)i, listBrushes[count], parPlayer));
                 count++;
             }
 
