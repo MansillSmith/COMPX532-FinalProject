@@ -83,6 +83,19 @@
                 <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
                 <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
                 <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="7" Binding="{Binding Path=Hole7}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="8" Binding="{Binding Path=Hole8}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="9" Binding="{Binding Path=Hole9}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="10" Binding="{Binding Path=Hole10}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="11" Binding="{Binding Path=Hole11}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="12" Binding="{Binding Path=Hole12}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="13" Binding="{Binding Path=Hole13}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="14" Binding="{Binding Path=Hole14}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="15" Binding="{Binding Path=Hole15}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="16" Binding="{Binding Path=Hole16}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="17" Binding="{Binding Path=Hole17}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="18" Binding="{Binding Path=Hole18}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Total" Binding="{Binding Path=Total}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
 
