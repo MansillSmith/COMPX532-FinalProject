@@ -24,5 +24,53 @@
 			"HoleNumber": 6,
 			"Score": 3
 		},
+		{
+			"HoleNumber": 7,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 8,
+			"Score": 5
+		},
+		{
+			"HoleNumber": 9,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 10,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 11,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 12,
+			"Score": 3
+		},
+		{
+			"HoleNumber": 13,
+			"Score": 5
+		},
+		{
+			"HoleNumber": 14,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 15,
+			"Score": 5
+		},
+		{
+			"HoleNumber": 16,
+			"Score": 3
+		},
+		{
+			"HoleNumber": 17,
+			"Score": 4
+		},
+		{
+			"HoleNumber": 18,
+			"Score": 4
+		}
 	]
 }
