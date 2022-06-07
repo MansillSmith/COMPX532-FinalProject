@@ -51,6 +51,41 @@
 
         <Canvas Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
 
+        <Grid Grid.Row="3" Grid.Column="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Button Grid.Column="0" Grid.Row="0" Width="50" Name="buttonLeftArrow" Click="buttonLeftArrow_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightBlue" Width="51"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+                <StackPanel x:Name="stackPanelLeftButton"/>
+            </Button>
+            <TextBlock Grid.Column="1" Grid.Row="0" Name="textBlockHoleText"/>
+            <Button Grid.Column="2" Grid.Row="0" Width="50" Name="buttonRightArrow" Click="buttonRightArrow_Click">
+                <StackPanel x:Name="stackPanelRightButton"/>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="LightBlue" Width="51"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
         <!--Row 4-->
         <DVC:Chart Grid.Row="4" Grid.Column="1" Name="pieChartPutts" Title="Putts" MinHeight="250" BorderThickness="0">
             <DVC:Chart.Series>

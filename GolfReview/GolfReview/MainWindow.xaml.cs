@@ -31,6 +31,8 @@ namespace GolfReview
         string AUGUSTA_CARD = DATA_FOLDER + ".AugustaNationalCard.json";
         string AUGUSTA_HOLE_FOLER = "GolfReview.Images.AugustaNationalGolfCourse";
 
+        const int MAX_HOLE_TO_DISPLAY = 6;
+
         int currentHoleToDisplay = 0;
         List<System.Windows.Media.Brush> listBrushes = new List<System.Windows.Media.Brush>() { 
             System.Windows.Media.Brushes.LightSteelBlue, 
@@ -54,8 +56,14 @@ namespace GolfReview
             LoadPlayers();
             playersList.Insert(0, GetParPlayer());
             dataGridScores.ItemsSource = playersList;
-
+            AddIconsToButtons();
             ChangeHole();
+        }
+
+        public void AddIconsToButtons()
+        {
+            stackPanelLeftButton.Children.Add(new System.Windows.Controls.Image() { Source = new BitmapImage(new Uri("pack://application:,,,/Images/arrowLeft.png", UriKind.RelativeOrAbsolute)) });
+            stackPanelRightButton.Children.Add(new System.Windows.Controls.Image() { Source = new BitmapImage(new Uri("pack://application:,,,/Images/arrowRight.png", UriKind.RelativeOrAbsolute)) });
         }
 
         public void DrawPlayersShots()
@@ -175,7 +183,7 @@ namespace GolfReview
                 try
                 {
                     int clickedHole = int.Parse(columnHeader.Column.Header.ToString()) - 1;
-                    if (clickedHole != currentHoleToDisplay)
+                    if (clickedHole != currentHoleToDisplay && clickedHole <= (MAX_HOLE_TO_DISPLAY - 1))
                     {
                         currentHoleToDisplay = clickedHole;
                         ChangeHole();
@@ -368,6 +376,25 @@ namespace GolfReview
             SetPieChartScores();
             SetPieChartPutts();
             SetPieChartGreenInRegulation();
+            textBlockHoleText.Text = "Hole " + (currentHoleToDisplay + 1).ToString();
+        }
+
+        private void buttonLeftArrow_Click(object sender, RoutedEventArgs e)
+        {
+            if(currentHoleToDisplay >= 1)
+            {
+                currentHoleToDisplay--;
+                ChangeHole();
+            }
+        }
+
+        private void buttonRightArrow_Click(object sender, RoutedEventArgs e)
+        {
+            if(currentHoleToDisplay < (MAX_HOLE_TO_DISPLAY - 1))
+            {
+                currentHoleToDisplay++;
+                ChangeHole();
+            }
         }
     }
 }
