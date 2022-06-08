@@ -36,12 +36,23 @@ namespace GolfReview
             get { return _shots; }
         }
 
+        private bool _gir;
+        public bool GIR
+        {
+            get { return _gir; }
+        }
 
         public Hole (JObject jObject)
         {
             HoleNumber = (int)jObject[nameof(HoleNumber)];
             Score = (int)jObject[nameof(Score)];
             _shots = new List<Shot>();
+
+            if (jObject.ContainsKey(nameof(GIR)))
+            {
+                _gir = (bool)jObject[nameof(GIR)];
+            }
+
 
             if (jObject.ContainsKey(nameof(Shots)))
             {

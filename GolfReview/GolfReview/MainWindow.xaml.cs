@@ -361,23 +361,18 @@ namespace GolfReview
 
         private void SetPieChartGreenInRegulation()
         {
-            int greenInRegulation = 0;
-            int holePar = playersList[0].Holes[currentHoleToDisplay].Score;
+            int gir = 0;
             for(int i = 1; i < playersList.Count(); i++)
             {
-                for(int j = 0; j < playersList[i].Holes[currentHoleToDisplay].Shots.Count(); j++)
+                if (playersList[i].Holes[currentHoleToDisplay].GIR)
                 {
-                    // If the player is using a putter in or before GIR
-                    if(playersList[i].Holes[currentHoleToDisplay].Shots[j].Club == "Putter" && j <= holePar -2 )
-                    {
-                        greenInRegulation++;
-                    }
+                    gir++;
                 }
             }
 
             List<KeyValuePair<string, int>> l = new List<KeyValuePair<string, int>>() {
-                new KeyValuePair<string, int>("GIR", greenInRegulation),
-                new KeyValuePair<string, int>("Not GIR", playersList.Count() - 1 - greenInRegulation)
+                new KeyValuePair<string, int>("GIR", gir),
+                new KeyValuePair<string, int>("Not GIR", playersList.Count() - 1 - gir)
             };
 
             ((PieSeries)pieChartGreensInRegulation.Series[0]).ItemsSource = l.ToArray();

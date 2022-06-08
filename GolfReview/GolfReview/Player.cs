@@ -297,7 +297,6 @@ namespace GolfReview
 
 
         private System.Windows.Media.Brush _brush;
-
         public System.Windows.Media.Brush Brush
         {
             get { return _brush; }
@@ -310,7 +309,6 @@ namespace GolfReview
             get { return _selected; }
             set { _selected = value; }
         }
-
 
         private void Constructor(JObject jObject)
         {
