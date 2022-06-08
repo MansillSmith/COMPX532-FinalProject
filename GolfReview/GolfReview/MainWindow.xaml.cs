@@ -83,6 +83,7 @@ namespace GolfReview
 
         public void DrawPlayersShots()
         {
+            List<Shape> shapeList = new List<Shape>();
             for(int j = 1; j < playersList.Count(); j++)
             {
                 if (playersList[j].Selected)
@@ -100,8 +101,19 @@ namespace GolfReview
                         tempLine.VerticalAlignment = VerticalAlignment.Center;
                         tempLine.StrokeThickness = 2;
                         canvasHoleMap.Children.Add(tempLine);
+
+                        Ellipse e = new Ellipse() { Width = 5, Height = 5, Stroke = System.Windows.Media.Brushes.Black, StrokeThickness = 4 };
+                        //canvasHoleMap.Children.Add(e);
+                        e.SetValue(Canvas.LeftProperty, (double)(ConvertXPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].X2) - 2.5));
+                        e.SetValue(Canvas.TopProperty, (double)(ConvertYPoint(playersList[j].Holes[currentHoleToDisplay].Shots[i].Y2) - 2.5));
+                        shapeList.Add(e);
                     }
                 }
+            }
+
+            for(int i = 0; i < shapeList.Count(); i++)
+            {
+                canvasHoleMap.Children.Add(shapeList[i]);
             }
         }
 
