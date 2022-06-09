@@ -48,7 +48,11 @@
             </DVC:Chart.Series>
         </DVC:Chart>
 
-        <Canvas Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900"/>
+        <Canvas Grid.Row="3" Grid.Column="3" Grid.RowSpan="3" Name="canvasHoleMap" Width="300" Height="900" MouseMove="canvasHoleMap_MouseMove">
+            <Canvas.ToolTip>
+                <ToolTip x:Name="toolTipCanvas"/>
+            </Canvas.ToolTip>
+        </Canvas>
 
         <Grid Grid.Row="3" Grid.Column="5" Grid.RowSpan="3">
             <Grid.ColumnDefinitions>
@@ -94,7 +98,21 @@
                 </Button>
             </Grid>
 
-            <DataGrid Grid.Row="1" Grid.Column="0" Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp" FontSize="18" VerticalScrollBarVisibility="Visible" MaxHeight="800">
+            <DataGrid Grid.Row="1" Grid.Column="0" Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp" 
+                      FontSize="18" VerticalScrollBarVisibility="Visible" MaxHeight="800" CanUserAddRows="False" CanUserDeleteRows="False">
+                
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}">
+                        <Style.Triggers>
+                            <Trigger Property="DataGridCell.IsSelected" Value="True">
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn Header="Selected" Binding="{Binding Path=Selected, Mode=TwoWay}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
                     <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
@@ -113,126 +131,126 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     <DataGridTextColumn Header="Nationality" Binding="{Binding Path=Nationality}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>
-                    <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="1" Binding="{Binding Path=Hole1}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole1}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="2" Binding="{Binding Path=Hole2}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole2}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="3" Binding="{Binding Path=Hole3}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole3}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="4" Binding="{Binding Path=Hole4}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole4}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="5" Binding="{Binding Path=Hole5}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole5}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="6" Binding="{Binding Path=Hole6}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole6}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="7" Binding="{Binding Path=Hole7}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="7" Binding="{Binding Path=Hole7}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole7}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="8" Binding="{Binding Path=Hole8}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="8" Binding="{Binding Path=Hole8}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole8}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="9" Binding="{Binding Path=Hole9}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="9" Binding="{Binding Path=Hole9}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole9}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="10" Binding="{Binding Path=Hole10}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="10" Binding="{Binding Path=Hole10}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole10}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="11" Binding="{Binding Path=Hole11}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="11" Binding="{Binding Path=Hole11}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole11}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="12" Binding="{Binding Path=Hole12}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="12" Binding="{Binding Path=Hole12}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole12}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="13" Binding="{Binding Path=Hole13}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="13" Binding="{Binding Path=Hole13}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole13}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="14" Binding="{Binding Path=Hole14}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="14" Binding="{Binding Path=Hole14}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole14}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="15" Binding="{Binding Path=Hole15}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="15" Binding="{Binding Path=Hole15}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole15}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="16" Binding="{Binding Path=Hole16}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="16" Binding="{Binding Path=Hole16}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole16}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="17" Binding="{Binding Path=Hole17}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="17" Binding="{Binding Path=Hole17}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole17}"/>
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Header="18" Binding="{Binding Path=Hole18}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True">
+                    <DataGridTextColumn Header="18" Binding="{Binding Path=Hole18}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True" Width="25">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="DataGridCell" >
                                 <Setter Property="Background" Value="{Binding BrushHole18}"/>
@@ -261,6 +279,7 @@
             <DVC:Chart.Series>
                 <DVC:PieSeries Title="Putts" IndependentValueBinding="{Binding Path=Key}" DependentValueBinding="{Binding Path=Value}"/>
             </DVC:Chart.Series>
+
         </DVC:Chart>
 
         <!-- Row 4 -->

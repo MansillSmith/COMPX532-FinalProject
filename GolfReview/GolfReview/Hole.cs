@@ -42,6 +42,13 @@ namespace GolfReview
             get { return _gir; }
         }
 
+
+        private int _numPutts;
+        public int NumPutts
+        {
+            get { return _numPutts; }
+        }
+
         public Hole (JObject jObject)
         {
             HoleNumber = (int)jObject[nameof(HoleNumber)];
@@ -51,6 +58,11 @@ namespace GolfReview
             if (jObject.ContainsKey(nameof(GIR)))
             {
                 _gir = (bool)jObject[nameof(GIR)];
+            }
+
+            if (jObject.ContainsKey(nameof(NumPutts)))
+            {
+                _numPutts = (int)jObject[nameof(NumPutts)];
             }
 
 

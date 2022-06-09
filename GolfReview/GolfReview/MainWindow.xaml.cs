@@ -59,8 +59,17 @@ namespace GolfReview
             playersList.Insert(0, parPlayer);
             dataGridScores.ItemsSource = playersList;
             AddIconsToButtons();
+            DeselectPlayers();
 
             ChangeHole();
+        }
+
+        private void DeselectPlayers()
+        {
+            for(int i = 7; i < playersList.Count(); i++)
+            {
+                playersList[i].Selected = false;
+            }
         }
 
         public void SetColoursOfDataGrid()
@@ -254,14 +263,16 @@ namespace GolfReview
 
             for(int i = 1; i < playersList.Count(); i++)
             {
-                int numPutts = 0;
-                for(int j = 0; j < playersList[i].Holes[currentHoleToDisplay].Shots.Count(); j++)
-                {
-                    if(playersList[i].Holes[currentHoleToDisplay].Shots[j].Club == "Putter")
-                    {
-                        numPutts++;
-                    }
-                }
+                //int numPutts = 0;
+                //for(int j = 0; j < playersList[i].Holes[currentHoleToDisplay].Shots.Count(); j++)
+                //{
+                //    if(playersList[i].Holes[currentHoleToDisplay].Shots[j].Club == "Putter")
+                //    {
+                //        numPutts++;
+                //    }
+                //}
+
+                int numPutts = playersList[i].Holes[currentHoleToDisplay].NumPutts;
 
                 if(numPutts == 0)
                 {
@@ -426,6 +437,62 @@ namespace GolfReview
                 currentHoleToDisplay++;
                 ChangeHole();
             }
+        }
+
+        private string CanvasToolTipText(double x, double y)
+        {
+            Shot closestShot = null;
+            double bestDistance = 0;
+            //for each player
+            for(int i = 1; i < 7; i++)
+            {
+                if (playersList[i].Selected)
+                {
+                    for (int j = 0; j < playersList[i].Holes[currentHoleToDisplay].Shots.Count(); j++)
+                    {
+                        double distance = CalculateDistance(playersList[i].Holes[currentHoleToDisplay].Shots[j], x, y);
+                        if (closestShot == null || distance < bestDistance)
+                        {
+                            closestShot = playersList[i].Holes[currentHoleToDisplay].Shots[j];
+                            bestDistance = distance;
+                        }
+                    }
+                }
+            }
+
+            //Got best string
+            return ToolTipString(closestShot);
+        }
+
+        private string ToolTipString(Shot closestShot)
+        {
+            return closestShot.Club + "\n" + closestShot.Distance + " Yards";
+        }
+
+        private double CalculateDistance(Shot s, double x, double y)
+        {
+            double shotX1 = ConvertXPoint(s.X1);
+            double shotX2 = ConvertXPoint(s.X2);
+            double shotY1 = ConvertXPoint(s.Y1);
+            double shotY2 = ConvertXPoint(s.Y2);
+
+            return Math.Sqrt(Math.Pow(shotX1 - x, 2) + Math.Pow(shotY1 - y, 2));
+
+            //double m = (shotY2 - shotY1) / (shotX2 - shotX1);
+            //double b = shotY1 - (m * shotX1);
+
+            //return Math.Abs((m * x) - y + b) / Math.Sqrt(m * m + 1);
+        }
+
+
+        private void canvasHoleMap_MouseMove(object sender, MouseEventArgs e)
+        {
+            double x = e.GetPosition((IInputElement)sender).X;
+            double y = e.GetPosition((IInputElement)sender).Y;
+            toolTipCanvas.Placement = System.Windows.Controls.Primitives.PlacementMode.Relative;
+            toolTipCanvas.HorizontalOffset = x + 15;
+            toolTipCanvas.VerticalOffset = y + 15;
+            toolTipCanvas.Content = CanvasToolTipText(x, y);
         }
     }
 }

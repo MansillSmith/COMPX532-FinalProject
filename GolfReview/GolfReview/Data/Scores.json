@@ -8,6 +8,7 @@
 					"HoleNumber": 1,
 					"Score": 4,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -47,6 +48,7 @@
 					"HoleNumber": 2,
 					"Score": 5,
 					"GIR": false,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -94,6 +96,7 @@
 					"HoleNumber": 3,
 					"Score": 3,
 					"GIR": false,
+					"NumPutts": 0,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -125,6 +128,7 @@
 					"HoleNumber": 4,
 					"Score": 3,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots": [
 						{
 							"Club": "3 Iron",
@@ -156,6 +160,7 @@
 					"HoleNumber": 5,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -195,6 +200,7 @@
 					"HoleNumber": 6,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "7 Iron",
@@ -280,6 +286,7 @@
 					"HoleNumber": 1,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -311,6 +318,7 @@
 					"HoleNumber": 2,
 					"Score": 5,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -358,6 +366,7 @@
 					"HoleNumber": 3,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -389,6 +398,7 @@
 					"HoleNumber": 4,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "4 Iron",
@@ -420,6 +430,7 @@
 					"HoleNumber": 5,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -459,6 +470,7 @@
 					"HoleNumber": 6,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "8 Iron",
@@ -544,6 +556,7 @@
 					"HoleNumber": 1,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -583,6 +596,7 @@
 					"HoleNumber": 2,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 1,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -622,6 +636,7 @@
 					"HoleNumber": 3,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "4 Iron",
@@ -661,6 +676,7 @@
 					"HoleNumber": 4,
 					"Score": 6,
 					"GIR": false,
+					"NumPutts": 3,
 					"Shots": [
 						{
 							"Club": "4 Iron",
@@ -716,6 +732,7 @@
 					"HoleNumber": 5,
 					"Score": 4,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -755,6 +772,7 @@
 					"HoleNumber": 6,
 					"Score": 2,
 					"GIR": true,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "7 Iron",
@@ -832,6 +850,7 @@
 					"HoleNumber": 1,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -863,6 +882,7 @@
 					"HoleNumber": 2,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -902,6 +922,7 @@
 					"HoleNumber": 3,
 					"Score": 5,
 					"GIR": false,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -949,6 +970,7 @@
 					"HoleNumber": 4,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "4 Iron",
@@ -988,6 +1010,7 @@
 					"HoleNumber": 5,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -1027,6 +1050,7 @@
 					"HoleNumber": 6,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "7 Iron",
@@ -1111,6 +1135,8 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -1149,6 +1175,8 @@
 				{
 					"HoleNumber": 2,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 1,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -1187,6 +1215,8 @@
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -1226,6 +1256,7 @@
 					"HoleNumber": 4,
 					"Score": 4,
 					"GIR": false,
+					"NumPutts": 2,
 					"Shots": [
 						{
 							"Club": "4 Iron",
@@ -1265,6 +1296,7 @@
 					"HoleNumber": 5,
 					"Score": 5,
 					"GIR": false,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -1312,6 +1344,7 @@
 					"HoleNumber": 6,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "7 Iron",
@@ -1397,6 +1430,7 @@
 					"HoleNumber": 1,
 					"Score": 4,
 					"GIR": true,
+					"NumPutts": 2,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -1436,6 +1470,7 @@
 					"HoleNumber": 2,
 					"Score": 6,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -1491,6 +1526,7 @@
 					"HoleNumber": 3,
 					"Score": 4,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots": [
 						{
 							"Club": "Driver",
@@ -1530,6 +1566,7 @@
 					"HoleNumber": 4,
 					"Score": 3,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots": [
 						{
 							"Club": "4 Iron",
@@ -1561,6 +1598,7 @@
 					"HoleNumber": 5,
 					"Score": 3,
 					"GIR": true,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "Driver",
@@ -1592,6 +1630,7 @@
 					"HoleNumber": 6,
 					"Score": 3,
 					"GIR": false,
+					"NumPutts": 1,
 					"Shots":[
 						{
 							"Club": "8 Iron",
@@ -1676,26 +1715,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 5,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 2,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 7,
@@ -1754,26 +1805,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 5,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 7,
@@ -1832,26 +1895,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 5,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 7,
@@ -1910,26 +1985,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 5,
+					"GIR": true,
+					"NumPutts": 3
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 7,
@@ -1988,26 +2075,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 5,
+					"GIR": false,
+					"NumPutts": 0
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 7,
@@ -2066,26 +2165,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 5,
+					"GIR": true,
+					"NumPutts": 3
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 5,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 3
 				},
 				{
 					"HoleNumber": 7,
@@ -2144,26 +2255,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 5,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 7,
@@ -2222,26 +2345,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 5,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 5,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 7,
@@ -2300,26 +2435,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 5,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 3,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 7,
@@ -2378,26 +2525,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 2,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 7,
@@ -2456,26 +2615,38 @@
 				{
 					"HoleNumber": 1,
 					"Score": 6,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 2,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 1
 				},
 				{
 					"HoleNumber": 3,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 4,
 					"Score": 3,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 5,
 					"Score": 4,
+					"GIR": true,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 6,
 					"Score": 4,
+					"GIR": false,
+					"NumPutts": 2
 				},
 				{
 					"HoleNumber": 7,
