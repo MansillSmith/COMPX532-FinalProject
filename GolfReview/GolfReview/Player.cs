@@ -357,10 +357,23 @@ namespace GolfReview
 
             if (this.Name != null)
             {
-                string[] names = this.Name.Split(' ');
 
-                this._image = new BitmapImage(new Uri("pack://application:,,,/Images/player" + names[0] + names[1] + ".jpg", UriKind.RelativeOrAbsolute));
+                string name = RemoveSpacesFromNames(this.Name);
+                this._image = new BitmapImage(new Uri("pack://application:,,,/Images/player" + name + ".jpg", UriKind.RelativeOrAbsolute));
             }
+        }
+
+        private string RemoveSpacesFromNames(string name)
+        {
+            string[] namesArray = name.Split(' ');
+            string s = "";
+
+            for(int i = 0; i < namesArray.Length; i++)
+            {
+                s += namesArray[i];
+            }
+
+            return s;
         }
 
         public Player (JObject jObject, System.Windows.Media.Brush brush, Player parPlayer)
