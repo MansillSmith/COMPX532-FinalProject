@@ -7,6 +7,7 @@
         mc:Ignorable="d" FontFamily="Segoe UI Light"
         xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
         Title="Golf Review" Height="450" Width="800" WindowState="Maximized" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,7 +28,6 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
         <!-- Row 0 -->
         <!--<Menu DockPanel.Dock="Top" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
             <MenuItem Header="File">
@@ -68,7 +68,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
-                
+
                 <Button Grid.Column="0" Grid.Row="0" Width="50" Name="buttonLeftArrow" Click="buttonLeftArrow_Click" Margin="10">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -95,7 +95,7 @@
             </Grid>
 
             <ScrollViewer Grid.Row="1" Grid.Column="0">
-                <DataGrid  Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp">
+                <DataGrid  Name="dataGridScores" AutoGenerateColumns="False" PreviewMouseLeftButtonUp="dataGridScores_PreviewMouseLeftButtonUp" FontSize="18">
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn Header="Selected" Binding="{Binding Path=Selected, Mode=TwoWay}" CanUserSort="False" CanUserResize="False" CanUserReorder="False"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" CanUserSort="False" CanUserResize="False" CanUserReorder="False" IsReadOnly="True"/>

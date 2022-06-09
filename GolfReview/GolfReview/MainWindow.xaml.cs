@@ -170,7 +170,16 @@ namespace GolfReview
             int count = 0;
             foreach (var i in jArray)
             {
-                playersList.Add(new Player((JObject)i, listBrushes[count], parPlayer));
+                System.Windows.Media.Brush brush;
+                if(count >= 6)
+                {
+                    brush = System.Windows.Media.Brushes.Transparent;
+                }
+                else
+                {
+                    brush = listBrushes[count];
+                }
+                playersList.Add(new Player((JObject)i, brush, parPlayer));
                 count++;
             }
 
